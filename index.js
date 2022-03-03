@@ -4,7 +4,10 @@ const Web3 = require('web3');
 
 const app = express();
 
-const secrets = require('./.secrets.json');
+const secrets = {
+    address: process.env.FAUCET_ADDRESS,
+    privKey: process.env.FAUCET_PRIVKEY
+};
 const config = require('./config.json');
 const port = config.port || 9090;
 const provider = new Web3(config.blockchain_node);
