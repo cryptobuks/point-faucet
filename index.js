@@ -9,7 +9,7 @@ const secrets = {
     privKey: process.env.FAUCET_PRIVKEY
 };
 const config = require('./config.json');
-const port = config.port || 9090;
+const port = process.env.PORT || 9090;
 const provider = new Web3(config.blockchain_node);
 
 // Load and init modules
