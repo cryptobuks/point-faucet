@@ -1,0 +1,24 @@
+{
+  "blockchain_node": "http://ynet.point.space:44444",
+  "port": 3000,
+  "airdrop": {
+    "amount": 1,
+    "limit": {
+      "address": {
+        "per_minute": 1,
+        "per_hour": 1,
+        "per_day": 1
+      },
+      "ip": {
+        "per_minute": 1,
+        "per_hour": 1,
+        "per_day": 1
+      },
+      "overall": {
+        "per_minute": 1,
+        "per_hour": 1,
+        "per_day": 1
+      }
+    }
+  }
+}
