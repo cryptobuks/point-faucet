@@ -1,5 +1,9 @@
 {
   "blockchain_node": "http://ynet.point.space:44444",
+  "queue": {
+    "cooldown": 500,
+    "maxCapacity": 5
+  },
   "airdrop": {
     "amount": 1,
     "limit": {
