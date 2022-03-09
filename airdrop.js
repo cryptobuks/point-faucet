@@ -19,7 +19,6 @@ const getTxQueue = () => {
     };
 
     const push = task => {
-        console.log('Pushing new task', {task, queue: queue.length})
         if (queue.length > config.queue.maxCapacity) {
             throw new TransactionError('Too many requests, please try again later');
         }
@@ -51,7 +50,7 @@ class Airdrop {
         try {
             const toAddress = req.query.address;
 
-            if (! utils.ethAddressRegex.test(toAddress)) {
+            if (!utils.ethAddressRegex.test(toAddress)) {
                 throw new RequestError('Invalid address: '+toAddress);
             }
 
@@ -68,12 +67,7 @@ class Airdrop {
                     gas: '21000',
                 };
 
-                console.log('Creating a new tx:', options);
-
                 const tx = await this.provider.eth.accounts.signTransaction(options, this.secrets.privKey);
-
-                console.log('Sending a new tx:', tx);
-
                 return this.provider.eth.sendSignedTransaction(
                     tx.rawTransaction
                 )
